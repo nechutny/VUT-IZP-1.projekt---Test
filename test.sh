@@ -73,7 +73,7 @@ else
 fi
 
 echo "\n[test_7] Počítání slov s debug modem";
-echo "Ani poté ale / - . !!! ####  mužova agresivita neustávala, a i když byl na zemi, snažil se alespoň nohou kopnout ... do !! ; zakročujících strážník" | ./proj1 . -d > test/test_7.output
+echo "Ani poté ale / - . !!! ####  mužova agresivita neustávala, a i když byl na zemi, snažil se alespoň nohou kopnout ... do !! ; zakročujících strážníků." | ./proj1 . -d > test/test_7.output
 diff test/test_7.test test/test_7.output
 
 if [ "$?" = "0" ]; then
