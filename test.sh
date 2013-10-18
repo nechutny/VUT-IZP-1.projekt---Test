@@ -84,7 +84,7 @@ else
 fi
 
 echo "\n[test_8] Pozice začíná nulama s debug modem";
-echo "Lorem!ipsum!dolor.sit,amet,consectetur=adipiscing´elit.Proin&porta$diam@vitae|arcu>hendrerit, nec<pre_tium@mi%auctor. Proin&sit*amet(consectetur)diam. Mauris{in}faucibus quam, sed luctus _nunc" | ./proj1 r 003 -d > test/test_8.output
+echo 'Lorem!ipsum!dolor.sit,amet,consectetur=adipiscing´elit.Proin&porta$diam@vitae|arcu>hendrerit, nec<pre_tium@mi%auctor. Proin&sit*amet(consectetur)diam. Mauris{in}faucibus quam, sed luctus _nunc' | ./proj1 r 003 -d > test/test_8.output
 diff test/test_8.test test/test_8.output
 
 if [ "$?" = "0" ]; then
