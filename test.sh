@@ -102,3 +102,12 @@ else
 	echo " ... Chyba";
 fi
 
+echo "\n[test_10] Kontrola, zda aplikace zpracuje prazdny vstup";
+echo -n | ./proj1 e 1 -d  > test/test_10.output
+diff test/test_10.test test/test_10.output
+if [ "$?" = "0" ]; then
+  echo " ... OK";
+  rm test/test_10.output
+else
+        echo " ... Chyba";
+fi
