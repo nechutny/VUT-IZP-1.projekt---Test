@@ -113,7 +113,7 @@ else
 fi
 
 echo "\n[test_11] Kontrola, zda aplikace nespadne na hooodne dlouhem vstupu";
-printf "%0.sabcdefg " {1..99999} | ./proj1 b -d /dev/null
+printf "%0.sabcdefg " {1..99999} | ./proj1 b -d > /dev/null
 if [ "$?" = "0" ]; then
   echo " ... OK";
 else
