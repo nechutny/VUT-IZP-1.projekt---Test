@@ -113,14 +113,12 @@ else
 fi
 
 echo "\n[test_11] Kontrola, zda aplikace nevypise vic ako 80 znaku v debug mode";
-echo "12345678901234567890123456789012345678901234567890123456789012345678901234567890XX" | ./proj1 w -d  > test/test_11.output
-diff test/test_11.test test/test_11.output
+echo "12345678901234567890123456789012345678901234567890123456789012345678901234567890" | ./proj1 w -d  > test/test_11.output
 
-if [ "$?" = "0" ]; then
-  echo " ... OK";
-  rm test/test_11.output
+if egrep -q '^[0-9]{80}$' test/test_11.output; then
+    echo " ... OK"
 else
-	echo " ... Chyba";
+     echo " ... Chyba";
 fi
 
 echo "\n[test_12] Kontrola, zda aplikace nespadne na hooodne dlouhem vstupu";
