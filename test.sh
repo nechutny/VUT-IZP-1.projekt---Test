@@ -112,7 +112,16 @@ else
         echo " ... Chyba";
 fi
 
-echo "\n[test_11] Kontrola, zda aplikace nespadne na hooodne dlouhem vstupu";
+echo "\n[test_11] Kontrola, zda aplikace nevypise vic ako 80 znaku v debug mode";
+echo "12345678901234567890123456789012345678901234567890123456789012345678901234567890" | ./proj1 w -d  > test/test_11.output
+
+if egrep -q '^[0-9]{80}$' test/test_11.output; then
+    echo " ... OK"
+else
+     echo " ... Chyba";
+fi
+
+echo "\n[test_12] Kontrola, zda aplikace nespadne na hooodne dlouhem vstupu";
 printf "%0.sabcdefg " {1..99999} | ./proj1 b -d > /dev/null
 if [ "$?" = "0" ]; then
   echo " ... OK";
