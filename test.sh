@@ -117,6 +117,7 @@ echo "12345678901234567890123456789012345678901234567890123456789012345678901234
 
 if egrep -q '^[0-9]{80}$' test/test_11.output; then
     echo " ... OK"
+    rm test/test_11.output
 else
      echo " ... Chyba";
 fi
